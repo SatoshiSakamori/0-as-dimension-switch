@@ -1,1 +1,1 @@
-# 0-as-dimension-switch
+# Negative Numbers as Rotated Dimensions: A Thought Experiment
