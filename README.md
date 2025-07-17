@@ -22,24 +22,24 @@ Traditionally:
 
 This project proposes a speculative reinterpretation:
 
-- The operation of applying a minus sign (−) could be viewed as a **rotation or dimension shift**, much like multiplying by the imaginary unit *i*.
+- Applying a minus sign (−) might be interpreted as a **rotation or dimensional shift**, similar to multiplying by the imaginary unit *i*.
 - Thus, **negative numbers might belong to a subtly different dimension** than positive numbers — even though they’re plotted on the same line.
 
 ## Why This Matters (Even If It’s Not Practical)
 
 - It offers a new way of thinking about the number line: as a **collapsed 2D space** where ± is a projection.
 - It may help bridge the intuitive gap between real and complex numbers.
-- Could be a stepping stone for **mathematical art**, **education**, or **philosophical mathematics**.
+- It might inspire **mathematical art**, **educational tools**, or **philosophical inquiry**.
 
 ## Analogy Table
 
-| Concept | Traditional View | This Idea |
-|--------|------------------|-----------|
-| `+1`   | One unit to the right | Base unit |
-| `-1`   | One unit to the left | Rotated dimension |
-| `+i`   | Orthogonal direction (imaginary) | Separate axis |
-| `-`    | Inverse sign | Rotation (like multiplying by *i*) |
-| `0`    | Neutral point | Dimensional switch |
+| Concept | Traditional View           | This Idea                   |
+|---------|----------------------------|-----------------------------|
+| `+1`    | One unit to the right       | Base unit                   |
+| `-1`    | One unit to the left        | Rotated dimension           |
+| `+i`    | Orthogonal direction (imaginary) | Separate axis          |
+| `-`     | Inverse sign                | Rotation (like multiplying by *i*) |
+| `0`     | Neutral point               | Dimensional switch          |
 
 ## Goals
 
@@ -67,4 +67,4 @@ This is an exploratory sandbox, not a finished theory.
 
 [MIT License](LICENSE)
 
-*Since English isn't my native language, I asked ChatGPT for help in writing this README. I appreciate any suggestions or corrections.*
+*As English is not my native language, I used ChatGPT to assist in writing this README. Feedback and corrections are very welcome.*
