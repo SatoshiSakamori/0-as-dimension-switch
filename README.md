@@ -45,6 +45,7 @@ It aims to:
 
 This project is **not a formal mathematical system**.  
 It is an **exploratory framework** for intuition, visualization, and creativity — not for formal computation or proof.
+*As English is not my native language, I used ChatGPT to assist in writing this README. Feedback and corrections are very welcome.*
 
 ## 🤝 Acknowledgments
 
