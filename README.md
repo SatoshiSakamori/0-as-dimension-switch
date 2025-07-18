@@ -53,3 +53,18 @@ Concept developed with the assistance of ChatGPT (OpenAI) for drafting, refining
 ---
 
 ## 🌀 Example: Dimensional Mapping of Numbers
+
+```
+  y-axis
+    |
+ −2 •       (0, 2)
+ −1 •       (0, 1)
+    •———•———•———•———→ x-axis
+          0   1   2
+         (0,0)(1,0)(2,0)
+```
+
+In this diagram:
+- Positive numbers lie on the horizontal x-axis.
+- Negative numbers lie on the vertical y-axis.
+- The minus sign (−) moves a number off the original axis into an orthogonal dimension.
