@@ -34,3 +34,7 @@ This project explores an alternative idea: **treating 0 not as a regular number 
 ## Notes
 
 I'm not a native English speaker and my mathematical background is still evolving. This concept is experimental, and I'm exploring it step by step. I used **ChatGPT** to help write this README and clarify the structure of my idea. I'm open to feedback, suggestions, or collaboration.
+
+## 📚 Related Documents
+
+- [Formalizing Zero as a Dimension Switch](./docs/concept-dimension-switch.md)
