@@ -1,71 +1,36 @@
-# − as a Dimensional Switch
+# 🧠 0-as-dimension-switch
 
-This project explores a conceptual model in which the **minus sign (−)** is reinterpreted not as a mere directional indicator or negation, but as a **dimensional switch** — a symbolic operator that shifts a number from one axis (dimension) to another.
+## Overview
 
-## 💡 Core Idea
+In the standard number line, 0 sits at the center, with positive numbers to the right and negative numbers to the left. However, **0 has fundamentally different properties** compared to other numbers — such as being undefined when dividing by it, or acting as the source of singularities in various mathematical contexts.
 
-In traditional mathematics, the number line is a one-dimensional structure:  
-- Positive and negative numbers lie on the same axis, extending in opposite directions from zero.
+This project explores an alternative idea: **treating 0 not as a regular number but as a "dimension switch" point**. Inspired by concepts like **absolute zero temperature**, where quantities only exist in one direction (positive), this concept proposes a number system where **divergences and singularities can be avoided by reinterpreting 0 as a boundary between dimensions**.
 
-However, in this model:
-- **The minus sign (−) changes the dimension** on which a number exists.
-- Positive numbers are placed on the **x-axis**, while negative numbers are placed on the **y-axis**.
-- The number `0` is located at the **intersection point** of these axes — it is not a midpoint, but a **dimensional switch** or pivot.
+## Background
 
-Thus:
-- `+1` → (1, 0) on the x-axis  
-- `−1` → (0, 1) on the y-axis  
-- `0`   → (0, 0), the dimensional origin
+- In real-number space, 0 functions as a central point of symmetry. But this symmetry may be the very reason why undefined behavior (like division by 0) or divergence occurs.
+- In physical quantities such as temperature, absolute zero acts as a **one-way boundary**; there's no negative temperature in the classical sense. This inspired the idea that **0 might represent a structural shift**, not a symmetrical center.
+- For instance, a function like `1/x`, which diverges at `x → 0`, might behave differently if 0 is **not part of the same dimension**, and **continuity across 0 is not required**.
 
-In this interpretation, **`−1` is not the inverse of `+1` on the same line**, but rather `+1` existing in a different dimension.
+## Core Idea
 
-## 🧭 Conceptual Significance
+- **0 is not an exception to arithmetic — it is a transition point between dimensions.**
+- **The number line splits at 0, and different mathematical rules or interpretations may apply on either side.**
+- **Operations involving 0 (like division by 0) are redefined as dimensional transformations rather than conventional arithmetic.**
 
-This idea is **philosophical and visual**, not mathematically rigorous.  
-It aims to:
-- Challenge conventional thinking about signs, numbers, and dimensions
-- Provide new ways to visualize abstract mathematical concepts
-- Serve as an **educational or imaginative framework**, especially for learners grappling with the idea of negative numbers
+## Goals
 
-## 📚 Project Goals
+- Propose a structure where **0 acts as a hub between different mathematical systems**
+- Avoid divergence and singularities by **redefining continuity and space around 0**
+- Explore connections with geometric or physical concepts (like projective space, Riemann surfaces, or physical constants)
 
-- ✨ Create intuitive diagrams and visualizations  
-- 🎞️ Develop animations using [Manim](https://www.manim.community/)  
-- 🧠 Document thought experiments and conceptual variations  
-- 🌱 Inspire alternative ways of thinking about number systems
+## Future Work
 
-## 📁 Repository Structure
+- Visual representation using **Manim** or other animation tools
+- Simulation with **Python**
+- Mathematical formalization in **LaTeX**
+- Explore connections to **hyperbolic geometry**, **projective space**, or **non-commutative algebra**
 
-- `README.md`: This file
-- `diagrams/`: Conceptual illustrations (planned)
-- `animations/`: Manim scripts (planned)
-- `notes/`: Ongoing philosophical and mathematical notes
+## Notes
 
-## ⚠️ Disclaimer
-
-This project is **not a formal mathematical system**.  
-It is an **exploratory framework** for intuition, visualization, and creativity — not for formal computation or proof.
-*As English is not my native language, I used ChatGPT to assist in writing this README. Feedback and corrections are very welcome.*
-
-## 🤝 Acknowledgments
-
-Concept developed with the assistance of ChatGPT (OpenAI) for drafting, refining, and expanding conceptual language and diagrams.
-
----
-
-## 🌀 Example: Dimensional Mapping of Numbers
-
-```
-  y-axis
-    |
- −2 •       (0, 2)
- −1 •       (0, 1)
-    •———•———•———•———→ x-axis
-          0   1   2
-         (0,0)(1,0)(2,0)
-```
-
-In this diagram:
-- Positive numbers lie on the horizontal x-axis.
-- Negative numbers lie on the vertical y-axis.
-- The minus sign (−) moves a number off the original axis into an orthogonal dimension.
+I'm not a native English speaker and my mathematical background is still evolving. This concept is experimental, and I'm exploring it step by step. I used **ChatGPT** to help write this README and clarify the structure of my idea. I'm open to feedback, suggestions, or collaboration.
