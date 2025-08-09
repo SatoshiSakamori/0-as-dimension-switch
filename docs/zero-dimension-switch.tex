@@ -1,0 +1,91 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{margin=25mm}
+\usepackage{hyperref}
+
+\title{Zero as a Dimension Switch:\\
+A Conceptual Framework for Reinterpreting the Number Line}
+\author{Satoshi Sakamori}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In the conventional real number line, zero is positioned at the center between positive and negative values. 
+However, zero exhibits fundamentally different properties from other numbers: division by zero is undefined, and it often marks the location of singularities. 
+This paper proposes a reinterpretation of zero as a \emph{dimension switch} --- a non-numeric boundary between two distinct spaces, thereby avoiding certain divergences and redefining the continuity around zero.
+\end{abstract}
+
+\section{Introduction}
+In standard arithmetic, zero acts as the additive identity and lies at the center of symmetry in the real number line. 
+Despite this central role, operations involving zero, such as division by zero, remain undefined. 
+This conceptual framework explores treating zero not as a number but as a transition point between two dimensions.
+
+\section{Motivation}
+Two main issues motivate this reinterpretation:
+\begin{enumerate}
+    \item \textbf{Singularities:} Functions such as $f(x) = 1/x$ diverge at $x = 0$.
+    \item \textbf{Physical Analogies:} In thermodynamics, absolute zero represents a one-sided boundary; temperatures do not extend below $0$ K in the classical sense.
+\end{enumerate}
+By redefining zero as a structural boundary, these difficulties may be reframed rather than patched within existing frameworks.
+
+\section{Definition of Spaces}
+We define:
+\begin{itemize}
+    \item $\mathbb{R}^+$: the \emph{positive space}, containing numbers such as $1, 2, \pi, \dots$
+    \item $\mathbb{R}^-$: the \emph{mirror space}, containing elements $1^{-}, 2^{-}, \pi^{-}, \dots$
+    \item $0$: a non-numeric \emph{switch point} between the two spaces
+\end{itemize}
+
+The overall structure can be expressed as:
+\[
+    \mathbb{R} = \mathbb{R}^+ \ \cup\ \{0\} \ \cup\ \mathbb{R}^-
+\]
+
+Here, $\mathbb{R}^-$ is not merely the set of numbers less than zero; it is an entirely separate dimension with symbolic elements.
+
+\section{Transformation Across Zero}
+We introduce a \emph{space transformation}:
+\[
+    T: \mathbb{R}^+ \to \mathbb{R}^-, \quad T(a) = a^{-}
+\]
+and its inverse
+\[
+    T^{-1}: \mathbb{R}^- \to \mathbb{R}^+, \quad T^{-1}(a^{-}) = a
+\]
+These transformations are not arithmetic inverses; they represent a conceptual translation across the zero boundary.
+
+\section{Behavior Near Zero}
+In this framework, there is no requirement for continuity across zero:
+\[
+    \lim_{x \to 0^+} f(x) \ \neq \ \lim_{x \to 0^-} f(x)
+\]
+The right-hand limit is taken in $\mathbb{R}^+$ and the left-hand limit in $\mathbb{R}^-$, and they may belong to incompatible domains.
+
+This separation allows for reinterpretation of problematic expressions like $1/x$ at $x = 0$ as involving a change of dimension rather than a blow-up to infinity.
+
+\section{Potential Applications}
+Potential mathematical and physical applications include:
+\begin{itemize}
+    \item Reinterpreting singularities in rational functions
+    \item Modeling one-sided physical quantities (e.g., absolute temperature)
+    \item Exploring connections to projective geometry and Riemann surfaces
+    \item Developing algebraic systems with multiple interconnected spaces
+\end{itemize}
+
+\section{Future Work and Open Questions}
+Future developments may include:
+\begin{itemize}
+    \item Rigorous algebraic formalization
+    \item Geometric representation using animation tools such as Manim
+    \item Computational simulations to explore functional behavior under $T$
+    \item Extensions to higher-dimensional spaces and non-commutative algebra
+\end{itemize}
+
+\section*{Acknowledgements}
+The author thanks language and structure assistance provided by large language models during the drafting process.
+
+\end{document}

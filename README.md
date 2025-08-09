@@ -1,40 +1,66 @@
-# 🧠 0-as-dimension-switch
+# 🧠 Zero as a Dimension Switch
 
 ## Overview
 
-In the standard number line, 0 sits at the center, with positive numbers to the right and negative numbers to the left. However, **0 has fundamentally different properties** compared to other numbers — such as being undefined when dividing by it, or acting as the source of singularities in various mathematical contexts.
+In the usual number line, **0** sits at the center between positive and negative numbers.  
+But 0 has unique mathematical properties — division by 0 is undefined, and it is often the source of singularities.  
 
-This project explores an alternative idea: **treating 0 not as a regular number but as a "dimension switch" point**. Inspired by concepts like **absolute zero temperature**, where quantities only exist in one direction (positive), this concept proposes a number system where **divergences and singularities can be avoided by reinterpreting 0 as a boundary between dimensions**.
+**This project explores an alternative interpretation:**  
+> Treat 0 not as a regular number, but as a **boundary between two separate spaces**.
 
-## Background
+Inspired by examples like **absolute zero temperature** (where values only exist on one side),  
+we propose a framework where **0 is a dimension switch**, allowing us to reinterpret problematic operations such as division by 0.
 
-- In real-number space, 0 functions as a central point of symmetry. But this symmetry may be the very reason why undefined behavior (like division by 0) or divergence occurs.
-- In physical quantities such as temperature, absolute zero acts as a **one-way boundary**; there's no negative temperature in the classical sense. This inspired the idea that **0 might represent a structural shift**, not a symmetrical center.
-- For instance, a function like `1/x`, which diverges at `x → 0`, might behave differently if 0 is **not part of the same dimension**, and **continuity across 0 is not required**.
+---
 
 ## Core Idea
 
-- **0 is not an exception to arithmetic — it is a transition point between dimensions.**
-- **The number line splits at 0, and different mathematical rules or interpretations may apply on either side.**
-- **Operations involving 0 (like division by 0) are redefined as dimensional transformations rather than conventional arithmetic.**
+- **0 is a non-numeric boundary** between two spaces:
+  - Positive space: \( \mathbb{R}^+ \)
+  - Mirror space: \( \mathbb{R}^- \), with elements like \( 𝟙⁻, 𝟚⁻ \)
+- **Negative numbers** are reinterpreted as elements of a mirror dimension, not just values below zero.
+- Crossing 0 means applying a **space transformation** \( T \):
+  - \( T(a) = a⁻ \)
+  - \( T^{-1}(a⁻) = a \)
+- No requirement for continuity across 0:
+  \[
+    \lim_{x \to 0^+} f(x) \neq \lim_{x \to 0^-} f(x)
+  \]
 
-## Goals
+---
 
-- Propose a structure where **0 acts as a hub between different mathematical systems**
-- Avoid divergence and singularities by **redefining continuity and space around 0**
-- Explore connections with geometric or physical concepts (like projective space, Riemann surfaces, or physical constants)
+## Why This Matters
 
-## Future Work
+- Avoids certain divergences and singularities by **breaking continuity** across 0.
+- Offers a fresh viewpoint for:
+  - Functions like \( 1/x \)
+  - Physical quantities with one-sided boundaries
+  - Geometric and algebraic extensions (projective space, hyperbolic geometry, etc.)
 
-- Visual representation using **Manim** or other animation tools
-- Simulation with **Python**
-- Mathematical formalization in **LaTeX**
-- Explore connections to **hyperbolic geometry**, **projective space**, or **non-commutative algebra**
+---
 
-## Notes
+## Project Structure
 
-I'm not a native English speaker and my mathematical background is still evolving. This concept is experimental, and I'm exploring it step by step. I used **ChatGPT** to help write this README and clarify the structure of my idea. I'm open to feedback, suggestions, or collaboration.
+- **docs/** — Formal definitions and symbolic rules (LaTeX → PDF)
+- **README.md** — This high-level summary
+- Planned:
+  - Animated visualizations with Manim
+  - Python simulations
+  - Extensions to other number systems
 
-## 📚 Related Documents
+---
 
-- [Formalizing Zero as a Dimension Switch](./docs/concept-dimension-switch.md)
+## Detailed Theory
+
+A complete explanation, with formal notation and examples,  
+is available in the LaTeX document here:  
+📄 [Zero as a Dimension Switch — Full Paper (PDF)](./docs/zero-dimension-switch.pdf)
+
+---
+
+## Status & Feedback
+
+This is an **experimental mathematical framework** under development.  
+Contributions, critiques, and new perspectives are welcome.
+
+---
