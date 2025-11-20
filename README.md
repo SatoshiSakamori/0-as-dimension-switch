@@ -24,6 +24,7 @@ In this framework, there are no "negative numbers" in the traditional sense. Ins
 
 **Standard Number Line:**
 Values pass through 0 linearly.
+
 `... <--- (-2) --- (-1) --- 0 --- (1) --- (2) ---> ...`
 
 **Dimension Switch Model (V-Shape):**
@@ -39,7 +40,7 @@ Values bounce at 0.
                 -----> 0 <-----
                   (The Switch)
 
----
+```
 
 ## How Calculation Works
 
