@@ -15,74 +15,81 @@ A Conceptual Framework for Reinterpreting the Number Line}
 
 \begin{abstract}
 In the conventional real number line, zero is positioned at the center between positive and negative values. 
-However, zero exhibits fundamentally different properties from other numbers: division by zero is undefined, and it often marks the location of singularities. 
-This paper proposes a reinterpretation of zero as a \emph{dimension switch} --- a non-numeric boundary between two distinct spaces, thereby avoiding certain divergences and redefining the continuity around zero.
+This paper proposes a reinterpretation of zero as a \emph{dimension switch} --- a non-numeric boundary between two distinct spaces. 
+The key feature is the \textbf{Reflection Rule} governing operations that cross the zero boundary, ensuring magnitude conservation while switching the dimensional state.
 \end{abstract}
 
 \section{Introduction}
 In standard arithmetic, zero acts as the additive identity and lies at the center of symmetry in the real number line. 
-Despite this central role, operations involving zero, such as division by zero, remain undefined. 
-This conceptual framework explores treating zero not as a number but as a transition point between two dimensions.
+This conceptual framework explores treating zero not as a number but as a transition point between two dimensions, allowing for a fresh approach to quantities that naturally conserve magnitude while possessing opposite directions.
 
 \section{Motivation}
-Two main issues motivate this reinterpretation:
+The primary motivation for this reinterpretation is to develop a structure that handles opposition ($\text{e.g., } a + (-a)$) as a shift in state rather than a mere cancellation to an additive identity.
 \begin{enumerate}
-    \item \textbf{Singularities:} Functions such as $f(x) = 1/x$ diverge at $x = 0$.
-    \item \textbf{Physical Analogies:} In thermodynamics, absolute zero represents a one-sided boundary; temperatures do not extend below $0$ K in the classical sense.
+    \item \textbf{Directional Conservation:} Modeling physical phenomena (e.g., mass, energy) where magnitude cannot be negative, but direction/state can be reversed (anti-matter analogy).
+    \item \textbf{Algebraic Clarity:} Replacing the traditional symmetry of the real line with a \textbf{V-shaped reflection model}, where all numbers are positive in their respective space.
 \end{enumerate}
-By redefining zero as a structural boundary, these difficulties may be reframed rather than patched within existing frameworks.
 
 \section{Definition of Spaces}
 We define:
 \begin{itemize}
-    \item $\mathbb{R}^+$: the \emph{positive space}, containing numbers such as $1, 2, \pi, \dots$
-    \item $\mathbb{R}^-$: the \emph{mirror space}, containing elements $1^{-}, 2^{-}, \pi^{-}, \dots$
-    \item $0$: a non-numeric \emph{switch point} between the two spaces
+    \item $\mathbb{R}^+$: the \emph{positive space}, containing elements $x = (m, +1)$ where $m \in \mathbb{R}_{\ge 0}$.
+    \item $\mathbb{R}^-$: the \emph{mirror space}, containing elements $x^{-} = (m, -1)$ where $m \in \mathbb{R}_{\ge 0}$.
+    \item $0$: the non-numeric \emph{switch point} or \emph{boundary}, where the magnitude $m=0$.
 \end{itemize}
+Elements of $\mathbb{R}^-$ are symbolic, corresponding to the magnitude in the mirror dimension.
 
-The overall structure can be expressed as:
+The overall structure can be conceptually viewed as:
 \[
-    \mathbb{R} = \mathbb{R}^+ \ \cup\ \{0\} \ \cup\ \mathbb{R}^-
+    \mathbb{S} = \left(\mathbb{R}_{\ge 0} \times \{+1, -1\}\right) / \sim
 \]
-
-Here, $\mathbb{R}^-$ is not merely the set of numbers less than zero; it is an entirely separate dimension with symbolic elements.
+where the equivalence relation $\sim$ identifies $(0, +1)$ and $(0, -1)$ with the single boundary point $0$.
 
 \section{Transformation Across Zero}
-We introduce a \emph{space transformation}:
+We introduce a \emph{space transformation} (Dimension Switch operator):
 \[
-    T: \mathbb{R}^+ \to \mathbb{R}^-, \quad T(a) = a^{-}
+    T: \mathbb{R}^+ \to \mathbb{R}^-, \quad T((m, +1)) = (m, -1) = m^{-}
 \]
 and its inverse
 \[
-    T^{-1}: \mathbb{R}^- \to \mathbb{R}^+, \quad T^{-1}(a^{-}) = a
+    T^{-1}: \mathbb{R}^- \to \mathbb{R}^+, \quad T^{-1}((m, -1)) = (m, +1) = m
 \]
-These transformations are not arithmetic inverses; they represent a conceptual translation across the zero boundary.
+These transformations formalize the dimensional change upon crossing the boundary.
 
-\section{Behavior Near Zero}
-In this framework, there is no requirement for continuity across zero:
-\[
-    \lim_{x \to 0^+} f(x) \ \neq \ \lim_{x \to 0^-} f(x)
-\]
-The right-hand limit is taken in $\mathbb{R}^+$ and the left-hand limit in $\mathbb{R}^-$, and they may belong to incompatible domains.
+\section{Arithmetic Axioms (The Reflection Rule)}
 
-This separation allows for reinterpretation of problematic expressions like $1/x$ at $x = 0$ as involving a change of dimension rather than a blow-up to infinity.
+We define the primary operation $\ominus$ (generalized subtraction) for elements $x = (m_x, s_x)$ and $y = (m_y, s_y)$, focusing on the case where $x \in \mathbb{R}^+$ and $y$ is the inverse operation (subtraction of magnitude $m_y$ towards the origin).
+
+\subsection{Subtraction Crossing the Boundary}
+If we subtract a magnitude $m_y$ from a positive element $m_x$:
+$$
+m_x \ominus m_y = 
+\begin{cases} 
+(m_x - m_y, +1) & \text{if } m_x \ge m_y \quad \text{(Stays in } \mathbb{R}^+) \\
+(m_y - m_x, -1) & \text{if } m_x < m_y \quad \text{(Reflects to } \mathbb{R}^-)
+\end{cases}
+$$
+This axiom models the "bounce" or reflection off the $0$ boundary, ensuring that the net magnitude is conserved, but the dimensional state flips.
+
+\subsection{Continuity and Limits}
+In this framework, the \textbf{magnitude} of a quantity is continuous across $0$:
+$$ \lim_{t \to 0} |f(t)| = 0 $$
+The discontinuity is confined only to the discrete state variable $s \in \{+1, -1\}$, not the physical quantity $m$. This addresses the ambiguity of continuity present in previous interpretations.
 
 \section{Potential Applications}
 Potential mathematical and physical applications include:
 \begin{itemize}
-    \item Reinterpreting singularities in rational functions
-    \item Modeling one-sided physical quantities (e.g., absolute temperature)
-    \item Exploring connections to projective geometry and Riemann surfaces
-    \item Developing algebraic systems with multiple interconnected spaces
+    \item Modeling systems where the absolute value (energy/mass) is conserved during a directional reversal (e.g., anti-matter creation).
+    \item Providing an alternative basis for vector spaces where the directional axis is explicitly separated from the magnitude.
+    \item Exploring extensions of algebra where the additive identity is replaced by a "state annihilation" or "boundary condition."
 \end{itemize}
 
 \section{Future Work and Open Questions}
 Future developments may include:
 \begin{itemize}
-    \item Rigorous algebraic formalization
-    \item Geometric representation using animation tools such as Manim
-    \item Computational simulations to explore functional behavior under $T$
-    \item Extensions to higher-dimensional spaces and non-commutative algebra
+    \item Rigorous algebraic formalization of multiplication and addition involving elements from both $\mathbb{R}^+$ and $\mathbb{R}^-$.
+    \item Geometric representation using animation tools such as Manim.
+    \item Analyzing the compatibility of this structure with existing algebraic fields.
 \end{itemize}
 
 \section*{Acknowledgements}
