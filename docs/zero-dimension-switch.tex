@@ -1,98 +1,204 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{bm}
 \usepackage{geometry}
-\geometry{margin=25mm}
 \usepackage{hyperref}
+\geometry{margin=25mm}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\newcommand{\Sstar}{\mathcal{S}^{\ast}}
+\newcommand{\R}{\mathbb{R}}
 
-\title{Zero as a Dimension Switch:\\
-A Conceptual Framework for Reinterpreting the Number Line}
+\title{Zero as a Dimension Switch:\\A Preliminary Signed Logarithmic Model}
 \author{Satoshi Sakamori}
-\date{\today}
+\date{14 October 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-In the conventional real number line, zero is positioned at the center between positive and negative values. 
-This paper proposes a reinterpretation of zero as a \emph{dimension switch} --- a non-numeric boundary between two distinct spaces. 
-The key feature is the \textbf{Reflection Rule} governing operations that cross the zero boundary, ensuring magnitude conservation while switching the dimensional state.
+We investigate a representation of nonzero real values in which positive
+and negative quantities occupy separately labelled branches and the
+approach to zero lies at an infinite end of a coordinate. We define
+multiplication, division, and partial addition, identify exact
+cancellation as an obstruction to closure, and explain why this coordinate
+change does not remove singularities. The model is equivalent to the
+nonzero real numbers, not a new field or physical theory. Boundary
+transition rules remain an open question.
 \end{abstract}
 
-\section{Introduction}
-In standard arithmetic, zero acts as the additive identity and lies at the center of symmetry in the real number line. 
-This conceptual framework explores treating zero not as a number but as a transition point between two dimensions, allowing for a fresh approach to quantities that naturally conserve magnitude while possessing opposite directions.
+\section{Motivation and scope}
 
-\section{Motivation}
-The primary motivation for this reinterpretation is to develop a structure that handles opposition ($\text{e.g., } a + (-a)$) as a shift in state rather than a mere cancellation to an additive identity.
+In real arithmetic, zero is the additive identity, $a+0=a$, and is
+absorbing under multiplication, $a\cdot0=0$. These rules are consistent
+and are not a logical defect. Yet division by zero is undefined, and
+zero often occurs at the boundary of expressions with divergent behavior.
+This motivates asking whether zero can be represented as a boundary
+outside a domain of ordinary nonzero values.
+
+The conservative first step adopted here uses known signed logarithmic
+coordinates. The term \emph{dimension switch} is a motivating metaphor
+for a possible future boundary transition; it does not assert additional
+physical spatial dimensions. No actual transition rule is proposed here.
+
+\section{The nonzero-value representation}
+
+Define
+\begin{equation}
+ \Sstar=\{+1,-1\}\times\R,\qquad
+ \Phi:\Sstar\longrightarrow\R\setminus\{0\},\qquad
+ \Phi(s,u)=s e^u.
+ \label{eq:phi}
+\end{equation}
+Here $s$ is a sign-state label and $u$ is a log-magnitude coordinate.
+The inverse is well-defined:
+\begin{equation}
+ \Phi^{-1}(x)=\bigl(\operatorname{sgn}(x),\ln|x|\bigr),
+ \qquad x\ne0.
+\end{equation}
+Thus $\Phi$ is a bijection. In this phase, the representation is
+mathematically equivalent to the nonzero real numbers.
+
+For either fixed sign,
+\begin{equation}
+ u\longrightarrow-\infty
+ \quad\Longleftrightarrow\quad
+ \Phi(s,u)\longrightarrow0\text{ along branch }s.
+\end{equation}
+The value zero is absent from $\Sstar$, and $-\infty$ is not a
+finite real coordinate. Conversely, the coordinate $u=0$ is allowed:
+it represents $x=s$. There are two ways to approach the missing
+boundary, distinguished by $s$. Identifying the two ends or attaching
+boundary states would require an additional mathematical definition.
+
+\section{Arithmetic within the domain}
+
+The usual nonzero multiplication and division are transported by
+$\Phi$ as follows:
+\begin{align}
+ (s,u)\odot(t,v)&=(st,u+v),\\
+ (s,u)\oslash(t,v)&=(st,u-v).
+\end{align}
+Both are defined for every input pair in $\Sstar\times\Sstar$.
+The multiplicative identity is $(+1,0)$ and the multiplicative inverse
+of $(s,u)$ is $(s,-u)$.
+Hence $(\Sstar,\odot)$ is a group isomorphic to
+$(\R\setminus\{0\},\cdot)$.
+
+Sign reversal is
+\begin{equation}
+ N(s,u)=(-s,u),\qquad N(N(s,u))=(s,u).
+\end{equation}
+This algebraic involution is neither a continuous passage through
+zero nor a physical reflection.
+
+\subsection{Partial addition}
+
+Since two nonzero real numbers can sum to zero, addition is not closed
+on $\Sstar$. We therefore define a \emph{partial} operation:
+\begin{equation}
+(s,u)\boxplus(t,v)=
+\begin{cases}
+ \bigl(s,M+\ln(1+e^{m-M})\bigr),
+  &s=t,\\[3pt]
+ \bigl(s,u+\ln(1-e^{v-u})\bigr),
+  &s\ne t,\ u>v,\\[3pt]
+ \bigl(t,v+\ln(1-e^{u-v})\bigr),
+  &s\ne t,\ v>u,
+\end{cases}
+\label{eq:add}
+\end{equation}
+where $M=\max(u,v)$ and $m=\min(u,v)$ in the first case.
+When $s\ne t$ and $u=v$, the operation is \emph{undefined}.
+For all defined inputs, substitution verifies
+\begin{equation}
+ \Phi(a\boxplus b)=\Phi(a)+\Phi(b).
+\end{equation}
+Subtraction can be performed as addition after sign reversal,
+wherever the result remains nonzero.
+
+For example $(+1,0)$ and $(-1,0)$ represent $1$ and $-1$.
+Their conventional sum equals zero, and hence
+\begin{equation}
+ (+1,0)\boxplus(-1,0)
+ \quad\text{is undefined in }\Sstar.
+\end{equation}
+One may record this case as a \emph{boundary/cancellation event},
+but such an event is not an element of $\Sstar$. Arithmetic
+involving that event is not defined by this model.
+
+If we instead adjoin an element $z$ mapped to $0$ and transfer all
+ordinary arithmetic through the extended bijection, we simply
+reconstruct a structure isomorphic to the real numbers. Including
+zero restores closure but yields no new field. Excluding zero while
+retaining every ordinary real addition result is impossible.
+
+\section{Limits and physical interpretation}
+
+With $x=\Phi(s,u)=s e^u$,
+\begin{equation}
+ \frac{1}{x}=s e^{-u}.
+\end{equation}
+Consequently reciprocal inversion becomes $(s,u)\mapsto(s,-u)$.
+As $x\to0$ along a fixed sign branch, $u\to-\infty$ and the
+reciprocal log-magnitude diverges to $+\infty$. The singular behavior
+is \emph{not removed}; its coordinate description has changed.
+Division by zero is still undefined.
+
+One-sided behavior is not made unnecessary by the representation.
+For instance,
+\begin{equation}
+ \lim_{x\to0^+}\frac1x=+\infty,\qquad
+ \lim_{x\to0^-}\frac1x=-\infty.
+\end{equation}
+Separate sign states make the distinction explicit without
+eliminating it.
+
+Coordinate-dependent singularities can sometimes be removed by
+better coordinates, whereas divergence of a coordinate-invariant
+quantity cannot be fixed by relabelling a coordinate alone. No
+physical consequences follow from the present representation without
+a separate physical model and its invariants.
+
+\section{Open questions}
+
 \begin{enumerate}
-    \item \textbf{Directional Conservation:} Modeling physical phenomena (e.g., mass, energy) where magnitude cannot be negative, but direction/state can be reversed (anti-matter analogy).
-    \item \textbf{Algebraic Clarity:} Replacing the traditional symmetry of the real line with a \textbf{V-shaped reflection model}, where all numbers are positive in their respective space.
+ \item Should the two approaches to zero lead to distinct boundary
+ states, a shared boundary state, or a state carrying approach history?
+ \item Can we define operations involving boundary events, including
+ subsequent compositions, without silently restoring ordinary zero?
+ \item If boundary laws differ from arithmetic of the real numbers,
+ which properties (associativity, distributivity, identities and
+ inverses) survive?
+ \item In specific equations, which singularities are merely
+ coordinate artifacts and which represent invariant obstructions?
 \end{enumerate}
 
-\section{Definition of Spaces}
-We define:
-\begin{itemize}
-    \item $\mathbb{R}^+$: the \emph{positive space}, containing elements $x = (m, +1)$ where $m \in \mathbb{R}_{\ge 0}$.
-    \item $\mathbb{R}^-$: the \emph{mirror space}, containing elements $x^{-} = (m, -1)$ where $m \in \mathbb{R}_{\ge 0}$.
-    \item $0$: the non-numeric \emph{switch point} or \emph{boundary}, where the magnitude $m=0$.
-\end{itemize}
-Elements of $\mathbb{R}^-$ are symbolic, corresponding to the magnitude in the mirror dimension.
+No bounce law, conservation of magnitude under subtraction,
+correspondence with antimatter, or phase-transition model is
+asserted. Such claims are not derivable from these definitions.
 
-The overall structure can be conceptually viewed as:
-\[
-    \mathbb{S} = \left(\mathbb{R}_{\ge 0} \times \{+1, -1\}\right) / \sim
-\]
-where the equivalence relation $\sim$ identifies $(0, +1)$ and $(0, -1)$ with the single boundary point $0$.
+\section{Relation to established work}
 
-\section{Transformation Across Zero}
-We introduce a \emph{space transformation} (Dimension Switch operator):
-\[
-    T: \mathbb{R}^+ \to \mathbb{R}^-, \quad T((m, +1)) = (m, -1) = m^{-}
-\]
-and its inverse
-\[
-    T^{-1}: \mathbb{R}^- \to \mathbb{R}^+, \quad T^{-1}((m, -1)) = (m, +1) = m
-\]
-These transformations formalize the dimensional change upon crossing the boundary.
+Representing a nonzero real number by its sign and the logarithm
+of its absolute value is a standard idea in signed logarithmic
+number systems (LNS). Exact opposite-sign cancellation corresponds
+to the logarithmic coordinate tending to negative infinity. The
+content of this note is therefore a faithful restatement of known
+nonzero arithmetic, not a newly discovered algebra. Any future
+novelty must arise from rigorous additional boundary rules.
 
-\section{Arithmetic Axioms (The Reflection Rule)}
-
-We define the primary operation $\ominus$ (generalized subtraction) for elements $x = (m_x, s_x)$ and $y = (m_y, s_y)$, focusing on the case where $x \in \mathbb{R}^+$ and $y$ is the inverse operation (subtraction of magnitude $m_y$ towards the origin).
-
-\subsection{Subtraction Crossing the Boundary}
-If we subtract a magnitude $m_y$ from a positive element $m_x$:
-$$
-m_x \ominus m_y = 
-\begin{cases} 
-(m_x - m_y, +1) & \text{if } m_x \ge m_y \quad \text{(Stays in } \mathbb{R}^+) \\
-(m_y - m_x, -1) & \text{if } m_x < m_y \quad \text{(Reflects to } \mathbb{R}^-)
-\end{cases}
-$$
-This axiom models the "bounce" or reflection off the $0$ boundary, ensuring that the net magnitude is conserved, but the dimensional state flips.
-
-\subsection{Continuity and Limits}
-In this framework, the \textbf{magnitude} of a quantity is continuous across $0$:
-$$ \lim_{t \to 0} |f(t)| = 0 $$
-The discontinuity is confined only to the discrete state variable $s \in \{+1, -1\}$, not the physical quantity $m$. This addresses the ambiguity of continuity present in previous interpretations.
-
-\section{Potential Applications}
-Potential mathematical and physical applications include:
-\begin{itemize}
-    \item Modeling systems where the absolute value (energy/mass) is conserved during a directional reversal (e.g., anti-matter creation).
-    \item Providing an alternative basis for vector spaces where the directional axis is explicitly separated from the magnitude.
-    \item Exploring extensions of algebra where the additive identity is replaced by a "state annihilation" or "boundary condition."
-\end{itemize}
-
-\section{Future Work and Open Questions}
-Future developments may include:
-\begin{itemize}
-    \item Rigorous algebraic formalization of multiplication and addition involving elements from both $\mathbb{R}^+$ and $\mathbb{R}^-$.
-    \item Geometric representation using animation tools such as Manim.
-    \item Analyzing the compatibility of this structure with existing algebraic fields.
-\end{itemize}
+\begin{thebibliography}{9}
+\bibitem{universal}
+Stillwater Supercomputing, \emph{Logarithmic Number System},
+\url{https://stillwater-sc.github.io/universal/number-systems/lns/}.
+\bibitem{xlns}
+XLNS Research, \emph{Introduction to the Logarithmic Number System},
+\url{https://github.com/xlnsresearch/xlns/blob/main/LNS_Intro.md}.
+\end{thebibliography}
 
 \section*{Acknowledgements}
-The author thanks language and structure assistance provided by large language models during the drafting process.
+The original conceptual motivation is by Satoshi Sakamori.
+Language models assisted with earlier drafts and the present revision.
 
 \end{document}
