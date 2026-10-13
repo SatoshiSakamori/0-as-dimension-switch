@@ -19,12 +19,10 @@
 \begin{abstract}
 We investigate a representation of nonzero real values in which positive
 and negative quantities occupy separately labelled branches and the
-approach to zero lies at an infinite end of a coordinate. We define
-multiplication, division, and partial addition, identify exact
-cancellation as an obstruction to closure, and explain why this coordinate
-change does not remove singularities. The model is equivalent to the
-nonzero real numbers, not a new field or physical theory. Boundary
-transition rules remain an open question.
+approach to zero lies at an infinite end of a coordinate. We define nonzero arithmetic, then add a shared boundary element for
+zero and continue calculations with ordinary real arithmetic. The
+extended structure is isomorphic to the real numbers. It does not
+remove singularities or introduce new physical laws.
 \end{abstract}
 
 \section{Motivation and scope}
@@ -39,7 +37,8 @@ outside a domain of ordinary nonzero values.
 The conservative first step adopted here uses known signed logarithmic
 coordinates. The term \emph{dimension switch} is a motivating metaphor
 for a possible future boundary transition; it does not assert additional
-physical spatial dimensions. No actual transition rule is proposed here.
+physical spatial dimensions. No rule different from ordinary arithmetic is proposed: a sign-branch
+change follows from the signed result of addition.
 
 \section{The nonzero-value representation}
 
@@ -68,8 +67,8 @@ For either fixed sign,
 The value zero is absent from $\Sstar$, and $-\infty$ is not a
 finite real coordinate. Conversely, the coordinate $u=0$ is allowed:
 it represents $x=s$. There are two ways to approach the missing
-boundary, distinguished by $s$. Identifying the two ends or attaching
-boundary states would require an additional mathematical definition.
+boundary, distinguished by $s$. In Section~\ref{sec:boundary}
+we identify their limits with one shared boundary element.
 
 \section{Arithmetic within the domain}
 
@@ -123,15 +122,71 @@ Their conventional sum equals zero, and hence
  (+1,0)\boxplus(-1,0)
  \quad\text{is undefined in }\Sstar.
 \end{equation}
-One may record this case as a \emph{boundary/cancellation event},
-but such an event is not an element of $\Sstar$. Arithmetic
-involving that event is not defined by this model.
+This failure of closure occurs \emph{within $\Sstar$ only}.
+In the next section a shared boundary is adjoined, completing
+addition without changing its ordinary result. The extended
+structure is isomorphic to the real numbers.
 
-If we instead adjoin an element $z$ mapped to $0$ and transfer all
-ordinary arithmetic through the extended bijection, we simply
-reconstruct a structure isomorphic to the real numbers. Including
-zero restores closure but yields no new field. Excluding zero while
-retaining every ordinary real addition result is impossible.
+\section{A shared zero boundary and unchanged arithmetic}
+\label{sec:boundary}
+
+To represent the same boundary reached from both sign branches,
+adjoin one special element $\mathbf{0}$:
+\begin{equation}
+ \overline{\mathcal S}=\Sstar\sqcup\{\mathbf{0}\},\qquad
+ \widehat\Phi:\overline{\mathcal S}\longrightarrow\R,\qquad
+ \widehat\Phi(s,u)=s e^u,\quad \widehat\Phi(\mathbf{0})=0.
+\end{equation}
+The boundary is not a finite coordinate pair $(s,u)$. The map
+$\widehat\Phi$ is a bijection. We impose the intended rule:
+\emph{arithmetic is unchanged in either sign branch}.
+Define
+\begin{align}
+ a\boxplus b&=\widehat\Phi^{-1}
+  \bigl(\widehat\Phi(a)+\widehat\Phi(b)\bigr),\\
+ a\boxtimes b&=\widehat\Phi^{-1}
+  \bigl(\widehat\Phi(a)\widehat\Phi(b)\bigr).
+\end{align}
+Addition and multiplication are now defined for every pair in
+$\overline{\mathcal S}$. Subtraction means addition with sign
+reversal, where $N(\mathbf{0})=\mathbf{0}$; division is defined
+only for a divisor unequal to $\mathbf{0}$.
+
+Explicitly, cancellation yields a boundary value, and calculation
+continues after that event:
+\begin{align}
+ (+1,0)\boxplus(-1,0)&=\mathbf{0},\\
+ \mathbf{0}\boxplus(-1,0)&=(-1,0),\\
+ (+1,0)\boxplus(-1,\ln 2)&=(-1,0),\\
+ (-1,\ln 2)\boxplus(+1,\ln 3)&=(+1,0).
+\end{align}
+The third equation is the ordinary result $1-2=-1$ expressed
+as positive magnitude one in the negative-sign branch.
+At the shared boundary, a positive added value enters the positive
+branch and a negative added value enters the negative branch.
+Neither physical reflection nor an extra transition law is needed.
+
+Equip the extended space with the metric
+\begin{equation}
+ d(a,b)=|\widehat\Phi(a)-\widehat\Phi(b)|.
+\end{equation}
+Then $\widehat\Phi$ is an isometry onto the real line.
+In this topology both branches approach the same point:
+\begin{equation}
+ \lim_{u\to-\infty}(+1,u)=\mathbf{0},\qquad
+ \lim_{u\to-\infty}(-1,u)=\mathbf{0}.
+\end{equation}
+Infinity is not a finite coordinate to be used in calculations;
+exact cancellation returns $\mathbf{0}$ directly.
+
+Since the operations were transported from the real numbers,
+$(\overline{\mathcal S},\boxplus,\boxtimes)$ is a field
+isomorphic to $(\R,+,\cdot)$, with the same algebraic laws.
+The boundary still acts as the additive identity and absorbs
+multiplication; division by it remains undefined. Thus the
+boundary interpretation does not make zero intrinsically
+nonnumeric or resolve mathematical or physical singularities.
+No approach-direction history or additional state is stored.
 
 \section{Limits and physical interpretation}
 
@@ -160,33 +215,29 @@ quantity cannot be fixed by relabelling a coordinate alone. No
 physical consequences follow from the present representation without
 a separate physical model and its invariants.
 
-\section{Open questions}
+\section{Scope and remaining research questions}
 
-\begin{enumerate}
- \item Should the two approaches to zero lead to distinct boundary
- states, a shared boundary state, or a state carrying approach history?
- \item Can we define operations involving boundary events, including
- subsequent compositions, without silently restoring ordinary zero?
- \item If boundary laws differ from arithmetic of the real numbers,
- which properties (associativity, distributivity, identities and
- inverses) survive?
- \item In specific equations, which singularities are merely
- coordinate artifacts and which represent invariant obstructions?
-\end{enumerate}
+This phase settles the shared-boundary choice and specifies how
+calculations continue after cancellation, preserving exactly the
+usual arithmetic laws on both branches. More elaborate state
+memory, different boundary laws, or a new physical theory would
+be separate hypotheses, not results of this model.
 
-No bounce law, conservation of magnitude under subtraction,
-correspondence with antimatter, or phase-transition model is
-asserted. Such claims are not derivable from these definitions.
+The next useful question is whether this particular coordinate
+description helps with specific, coordinate-dependent
+singularities. Coordinate-invariant divergences cannot be
+removed by a mere change of representation. No bounce law,
+magnitude-conservation claim, antimatter model, or
+thermodynamic phase transition is asserted.
 
 \section{Relation to established work}
 
 Representing a nonzero real number by its sign and the logarithm
 of its absolute value is a standard idea in signed logarithmic
 number systems (LNS). Exact opposite-sign cancellation corresponds
-to the logarithmic coordinate tending to negative infinity. The
-content of this note is therefore a faithful restatement of known
-nonzero arithmetic, not a newly discovered algebra. Any future
-novelty must arise from rigorous additional boundary rules.
+to the logarithmic coordinate tending to negative infinity. After adding one shared zero boundary, the result is isomorphic
+to the real field. The present construction therefore changes the
+representation rather than creating a new algebra.
 
 \begin{thebibliography}{9}
 \bibitem{universal}
